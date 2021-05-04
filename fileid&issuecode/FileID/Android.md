@@ -10,6 +10,7 @@ sh -c "$(curl -fsSL https://gitee.com/idkzr/termux-ohmyzsh/raw/master/install.sh
 #### 后续步骤
 5. 复制资源码，如`22187534`，  
 复制命令,修改`资源码`3个字为复制的资源码。  
+
 ```bash
 curl -X POST https://e.coding.net/open-api \
 -d '{"Action": "DescribeIssueFileUrl","ProjectName": "xrz-video","FileId": 资源码,"Authorization": "3d81637cf09027ffa006d707419a899e2f3f4cca"}' \
@@ -18,6 +19,7 @@ curl -X POST https://e.coding.net/open-api \
 
 6. 在Termux里输入**修改后的命令**，回车。  
 Demo:  
+
 ```bash
 curl -X POST https://e.coding.net/open-api \
 -d '{"Action": "DescribeIssueFileUrl","ProjectName": "xrz-video","FileId": 22187534,"Authorization": "3d81637cf09027ffa006d707419a899e2f3f4cca"}' \

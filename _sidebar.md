@@ -4,7 +4,7 @@
 * [FileId及IssueCode使用教程](/fileid&issuecode)
   * [FileID | Android](/fileid&issuecode/FileID/Android)
   * [FileID | IOS](/fileid&issuecode/FileID/IOS)
-  * [FileID | 网页](/fileid&Issuecode/FileID/web)
+  * [FileID | 网页](/fileid&issuecode/FileID/web)
   * [通用 | 小程序](/fileid&issuecode/mp)
 * [cid使用教程](/cid)
 * [META URL使用教程](/metaurl)
