@@ -8,4 +8,4 @@
 * [cid使用教程](/cid)
 * [META URL使用教程](/metaurl)
 * [在线观看、弹幕播放](/watch-online)
-* [OneDrive API](/od-api)
+* [OPEN-API](/openapi)
