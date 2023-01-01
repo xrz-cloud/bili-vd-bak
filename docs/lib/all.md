@@ -119,6 +119,7 @@
 <script setup lang="ts">
 import { ElButton, ElTable, ElTableColumn } from "element-plus";
 import { ref, reactive, computed } from "vue";
+import fetch from "isomorphic-fetch";
 const gapi = "https://b23.xrzapi.eu.org/api/graphql"
 
 const data: { md: number; name: string; ffn: string; res: string }[] = reactive(
