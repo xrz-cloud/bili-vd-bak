@@ -1,9 +1,17 @@
+import { viteBundler } from "@vuepress/bundler-vite";
+import ElementPlus from "unplugin-element-plus/vite";
 import { defineUserConfig, defaultTheme } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { pwaPlugin } from "@vuepress/plugin-pwa";
 import { pwaPopupPlugin } from "@vuepress/plugin-pwa-popup";
 
 export default defineUserConfig({
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {
+      plugins: [ElementPlus({})],
+    },
+  }),
   // 站点配置
   lang: "zh-CN",
   title: "bili-vd-bak",

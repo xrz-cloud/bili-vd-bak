@@ -118,9 +118,6 @@
 
 <script setup lang="ts">
 import { ElButton, ElTable, ElTableColumn } from "element-plus";
-import "element-plus/es/components/button/style/css"
-import "element-plus/es/components/table/style/css"
-import "element-plus/es/components/table-column/style/css"
 import { ref, reactive, computed } from "vue";
 const gapi = "https://b23.xrzapi.eu.org/api/graphql"
 

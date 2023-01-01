@@ -11,10 +11,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-beta.60",
     "@vuepress/client": "2.0.0-beta.60",
     "@vuepress/plugin-pwa": "2.0.0-beta.60",
     "@vuepress/plugin-pwa-popup": "2.0.0-beta.60",
     "@vuepress/plugin-search": "2.0.0-beta.60",
+    "unplugin-element-plus": "^0.4.1",
     "vue": "^3.2.45",
     "vuepress": "2.0.0-beta.60"
   },
