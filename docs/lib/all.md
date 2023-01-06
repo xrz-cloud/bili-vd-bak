@@ -161,7 +161,7 @@ async function getInfo() {
   }
 `,
         variables: {
-          path: "/index/md_name_dic.json",
+          path: "/bangumi-index/md_name_dic.json",
         },
       }),
     }).then((res) => res.json())
@@ -194,7 +194,7 @@ async function getPages(drive: string, nextPageToken: string) {
   }
 `,
       variables: {
-        path: "/index/md/",
+        path: "/bangumi-index/md/",
         drive: drive,
         nextPageToken: nextPageToken,
       },
@@ -225,7 +225,7 @@ async function main() {
     body: JSON.stringify({
     query: `
   {
-    od(path: "/index/md/") {
+    od(path: "/bangumi-index/md/") {
       folder {
         items {
           sharelink,

@@ -2,6 +2,7 @@
 
 ## 导航
 
+* [所有关于库(2)的问题](//bili-vd-bak.notion.site/b23-f3d8d201a8dc46f7b04a33c53ccf2da4)
 * [FileId及IssueCode使用教程](../help/fileid&issuecode.md)<Badge type="danger" text="已弃用(失效)" />
   * [FileID | Android](../help/fileid&issuecode/FileID/Android.md)<Badge type="danger" text="已弃用(失效)" />
   * [FileID | IOS](../help/fileid&issuecode/FileID/IOS.md)<Badge type="danger" text="已弃用(失效)" />
