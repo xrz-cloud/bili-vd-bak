@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0beaf5ce","path":"/help/drc.html","title":"DRC(Docker Register Cloud)","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"配置","slug":"配置","link":"#配置","children":[]}],"git":{"updatedTime":1672554990000,"contributors":[{"name":"xrz-cloud","email":"3545270592@qq.com","commits":1}]},"filePathRelative":"help/drc.md"}');export{e as data};
