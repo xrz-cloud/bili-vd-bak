@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-e779e154","path":"/help/404.html","title":"这个页面火星了...","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1672554990000,"contributors":[{"name":"xrz-cloud","email":"3545270592@qq.com","commits":1}]},"filePathRelative":"help/404.md"}');export{e as data};

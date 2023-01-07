@@ -111,7 +111,7 @@
       >
         来源
       </el-button>
-      <a :href="'//share.xrzyun.top' + '/md/' + filterTableData[scope.$index].md" target="_blank">外部打开</a>
+      <a :href="'//share.xrzyun.top' + '/md/' + filterTableData[scope.$index].md + '/' + Base64.encodeURI(filterTableData[scope.$index].res)" target="_blank">外部打开</a>
     </template>
   </el-table-column>
 </el-table>
@@ -120,6 +120,7 @@
 import { ElButton, ElTable, ElTableColumn } from "element-plus";
 import { ref, reactive, computed } from "vue";
 import fetch from "isomorphic-fetch";
+import { Base64 } from 'js-base64';
 const gapi = "https://b23.xrzapi.eu.org/api/graphql"
 
 const data: { md: number; name: string; ffn: string; res: string }[] = reactive(
@@ -141,7 +142,7 @@ const filterTableData = computed(() =>
     .sort((a, b) => a.md - b.md)
 );
 
-let md_name_dic: { [key: string]: string } = reactive({});
+let md_name_dic: { [key: string]: { [key: string]: string } } = reactive({});
 async function getInfo() {
   const res_info = (
     await fetch(gapi, {
@@ -154,7 +155,8 @@ async function getInfo() {
     od(path: $path) {
       raw {
         dlinks {
-          dlink
+          dlink,
+          sharelink
         }
       }
     }
@@ -165,9 +167,11 @@ async function getInfo() {
         },
       }),
     }).then((res) => res.json())
-  )?.data?.od?.raw?.dlinks[0]?.dlink;
-  const info = await fetch(res_info).then((res) => res.json());
-  md_name_dic = info;
+  )?.data?.od?.raw?.dlinks;
+  for (const r_info of res_info) {
+    const info = await fetch(r_info?.dlink).then((res) => res.json());
+    md_name_dic[r_info?.sharelink] = info;
+  }
 }
 
 async function getPages(drive: string, nextPageToken: string) {
@@ -208,8 +212,8 @@ async function getPages(drive: string, nextPageToken: string) {
   for (const j of value) {
     data.push({
       md: Number(j.name), //完整文件名
-      name: md_name_dic[j.name] || "",
-      ffn: j.name + (md_name_dic[j.name] || ""),
+      name: md_name_dic[sharelink][j.name] || "",
+      ffn: j.name + (md_name_dic[sharelink][j.name] || ""),
       res: sharelink, //此集来源链接
     });
   }
@@ -252,8 +256,8 @@ async function main() {
     for (const j of value) {
       data.push({
         md: Number(j.name), //完整文件名
-        name: md_name_dic[j.name] || "",
-        ffn: j.name + (md_name_dic[j.name] || ""),
+        name: md_name_dic[sharelink][j.name] || "",
+        ffn: j.name + (md_name_dic[sharelink][j.name] || ""),
         res: sharelink, //此集来源链接
       });
     }
